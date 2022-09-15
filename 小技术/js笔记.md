@@ -157,7 +157,7 @@ s.substring(7); // 从索引7开始到结束，返回'world'
 
 ## 数组
 
-### JavaScript的`Array`可以包含任意数据类型，并通过索引来访问每个元素。
+### JavaScript的`Array`可以包含任意数据类型，并通过索引来访问每个元素。(变长、变类型)
 
 ### indexOf
 
@@ -1713,6 +1713,11 @@ class PrimaryStudent extends Student {
 
 ##### window
 
+* confirm(): 显示带有一段消息以及却让人按钮和取消按钮的对话框
+* alert(): 显示带有一段消息和一个确认按钮的警告框
+* setInterval()：按照指定的周期(以毫秒计)来调用函数或计算表达式
+* setTimeout(): 在指定的毫秒数后调用函数或计算表达式
+
 `window`对象不但充当全局作用域，而且表示浏览器窗口。
 
 `window`对象有`innerWidth`和`innerHeight`属性，可以获取浏览器窗口的内部宽度和高度。内部宽高是指除去菜单栏、工具栏、边框等占位元素后，用于显示网页的净宽高。
@@ -1750,7 +1755,11 @@ console.log('window inner size: ' + window.innerWidth + ' x ' + window.innerHeig
 http://www.example.com:8080/path/index.html?a=1&b=2#TOP
 ```
 
-可以用`location.href`获取。要获得URL各个部分的值，可以这么写：
+可以用`location.href`获取：
+
+`location.href="https://www.baidu.com";`
+
+要获得URL各个部分的值，可以这么写：
 
 ```javascript
 location.protocol; // 'http'
@@ -2279,6 +2288,28 @@ function checkForm() {
 ```
 
 注意到`id`为`md5-password`的`<input>`标记了`name="password"`，而用户输入的`id`为`input-password`的`<input>`没有`name`属性。没有`name`属性的`<input>`的数据不会被提交。
+
+##### 事件绑定
+
+* 方式一：通过HTML标签中的时间属性进行绑定
+
+  `<input type="button" onclick='on()'>`
+
+  `function on(){`
+
+  ​	`alert("我被点了");`
+
+  `}`
+
+* 方式二：通过DOM元素属性绑定
+
+​		`<input type="button" id="btn">`
+
+​		`document.getElementById("btn").onclick = function(){`
+
+​		`alert("我被点了");`
+
+`		}`
 
 ##### 练习
 
